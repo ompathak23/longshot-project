@@ -1,5 +1,4 @@
 import { Container, Box, Typography, Divider, Button, Tooltip, styled } from '@mui/material'
-import PropTypes from 'prop-types';
 import CircularProgress from '@mui/material/CircularProgress';
 import { tooltipClasses } from '@mui/material/Tooltip';
 import Zoom from '@mui/material/Zoom';
