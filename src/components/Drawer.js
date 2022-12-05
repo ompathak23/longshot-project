@@ -234,8 +234,6 @@ const DrawerMenu = () => {
                                 justifyContent: open ? 'initial' : 'center',
                                 px: 2.5,
                             }}
-
-                            onClick={handleClick}
                         >
                             <ListItemIcon
                                 sx={{

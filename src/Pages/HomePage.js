@@ -5,8 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import KeyWord from '../components/KeyWord/KeyWord';
 import DrawerMenu from '../components/Drawer';
 
-const drawerWidth = 240;
-
 // Styling the component for the Drawer Header
 
 const DrawerHeader = styled('div')(({ theme }) => ({
