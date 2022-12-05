@@ -159,7 +159,7 @@ function EnhancedTableHead() {
                             fontFamily: 'Montserrat',
                             fontStyle: 'normal',
                             fontWeight: '500',
-                            fontSize: '12px',
+                            fontSize: '11px',
                             padding: '5px'
                         }}>
                             {headCell.label}
@@ -176,7 +176,7 @@ const TablePanel = (props) => {
     const rows = props.data;
 
     return (
-        <Container sx={{ width: '925px', marginLeft: '-55px' }}>
+        <Container sx={{ width: '900px', marginLeft: '-45px' }}>
             <Box sx={{ width: '100%', alignItems: 'center' }}>
                 <Paper elevation={0} sx={{ width: '100%', mb: 2 }}>
                     <TableContainer>
