@@ -1,3 +1,5 @@
+// Importing required libraries
+
 import React from 'react';
 import { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
@@ -26,7 +28,11 @@ import NewspaperIcon from '@mui/icons-material/Newspaper';
 import logo_small from '../images/longshot_logo_small.png'
 import logo from '../images/longshot_logo.png'
 
+
 const drawerWidth = 240;
+
+
+// Defining the style for the drawer when it is open
 
 const openedMixin = (theme) => ({
     width: drawerWidth,
@@ -36,6 +42,8 @@ const openedMixin = (theme) => ({
     }),
     overflowX: 'hidden',
 });
+
+// Defining the style for the drawer when it is closed
 
 const closedMixin = (theme) => ({
     transition: theme.transitions.create('width', {
@@ -50,14 +58,17 @@ const closedMixin = (theme) => ({
     },
 });
 
+// Styling the component for the drawer header
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
 }));
+
+
+// Styling the App Bar component 
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
@@ -76,6 +87,9 @@ const AppBar = styled(MuiAppBar, {
         }),
     }),
 }));
+
+
+// Styling the Drawer Menu
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
@@ -99,11 +113,12 @@ const DrawerMenu = () => {
     const theme = useTheme();
     const [open, setOpen] = useState(false);
 
-    const [subopen, setSubOpen] = useState(false);
+    // States and function for sub-menus
+    // const [subopen, setSubOpen] = useState(false);
 
-    const handleClick = () => {
-        setSubOpen(!subopen);
-    };
+    // const handleClick = () => {
+    //     setSubOpen(!subopen);
+    // };
 
 
     const handleDrawerOpen = () => {
@@ -392,49 +407,3 @@ const DrawerMenu = () => {
 }
 
 export default DrawerMenu
-
-
-
-// {
-//     ['Blog', 'Templates', 'Integrations'].map((text, index) => (
-//         <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-//             <ListItemButton
-//                 sx={{
-//                     minHeight: 48,
-//                     justifyContent: open ? 'initial' : 'center',
-//                     px: 2.5,
-//                 }}
-
-//             //onClick={index !== 0 ? 'none' : handleClick}
-//             >
-//                 <ListItemIcon
-//                     sx={{
-//                         minWidth: 0,
-//                         mr: open ? 3 : 'auto',
-//                         justifyContent: 'center',
-//                         color: '#6200ea'
-//                     }}
-//                 >
-//                     {index === 0 ? <ArticleIcon /> : index === 1 ? <ExtensionIcon /> : <IntegrationInstructionsIcon />}
-//                 </ListItemIcon>
-//                 <ListItemText disableTypography primary={<Typography variant="subtitle2" sx={{
-//                     fontFamily: 'Montserrat',
-//                     fontWeight: '500',
-//                     color: 'black',
-//                 }}>{text}</Typography>} sx={{ opacity: open ? 1 : 0 }} />
-//                 {/* {index !== 0 ? subopen ? <ExpandLess sx={{ display: open ? 'flex' : 'none' }} /> : <ExpandMore sx={{ display: open ? 'flex' : 'none' }} /> : <></>} */}
-
-//             </ListItemButton>
-//             {/* <Collapse in={subopen} timeout="auto" unmountOnExit>
-//                                 <List component="div" disablePadding>
-//                                     <ListItemButton sx={{ pl: 4 }}>
-//                                         <ListItemIcon>
-//                                             <RestaurantMenuIcon />
-//                                         </ListItemIcon>
-//                                         <ListItemText primary="Starred" />
-//                                     </ListItemButton>
-//                                 </List>
-//                             </Collapse> */}
-//         </ListItem>
-//     ))
-// }

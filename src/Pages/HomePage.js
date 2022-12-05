@@ -7,6 +7,8 @@ import DrawerMenu from '../components/Drawer';
 
 const drawerWidth = 240;
 
+// Styling the component for the Drawer Header
+
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
@@ -19,9 +21,17 @@ export default function HomePage() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
+
+            {/* Drawer Menu */}
+
             <DrawerMenu />
+
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                {/* Drawer Header */}
+
                 <DrawerHeader />
+
+                {/* Component to display Keyword data */}
                 <KeyWord />
             </Box>
         </Box>
